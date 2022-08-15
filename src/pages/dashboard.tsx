@@ -1,4 +1,5 @@
 import { InferGetServerSidePropsType, NextPage } from "next";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { env } from "../env/client.mjs";
 

@@ -5,6 +5,10 @@ import { env } from "../../../env/server.mjs";
 
 const nextAuthOptions = (req: any, res: any) => {
   return {
+    session: {
+      maxAge: 60 * 60 * 8,
+      updateAge: 0,
+    },
     callbacks: {
       jwt: ({ token, user }: { token: any; user: any }) => {
         if (user) token.id = user.id;
