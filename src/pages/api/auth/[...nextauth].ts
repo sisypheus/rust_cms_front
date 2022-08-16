@@ -6,7 +6,7 @@ import { env } from "../../../env/server.mjs";
 const nextAuthOptions = (req: any, res: any) => {
   return {
     session: {
-      maxAge: 60 * 60 * 8,
+      maxAge: 60 * 60,
       updateAge: 0,
     },
     callbacks: {

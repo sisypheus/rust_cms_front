@@ -13,10 +13,6 @@ export async function middleware(req: NextRequest, ev: NextFetchEvent) {
   const session = await getSession({ req: requestForNextAuth });
 
   if (session) {
-    if (url.pathname === "/login") {
-      url.pathname = "/";
-      return NextResponse.redirect(url);
-    }
     return NextResponse.next();
   } else {
     url.pathname = "/login";
@@ -25,5 +21,5 @@ export async function middleware(req: NextRequest, ev: NextFetchEvent) {
 }
 
 export const config = {
-  matcher: ['/add_post/:path*', '/dashboard/:path*'],
-}
+  matcher: ["/add_post/:path*", "/dashboard/:path*"],
+};

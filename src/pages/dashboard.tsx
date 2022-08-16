@@ -1,5 +1,3 @@
-import { InferGetServerSidePropsType, NextPage } from "next";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { env } from "../env/client.mjs";
 
@@ -13,10 +11,10 @@ type Post = {
 const PostDisplay = ({ post }: { post: Post }) => {
   return (
     <div className="w-full h-full flex p-4">
-      <div>
+      <div className="w-1/3">
         <img src={post.image} alt={post.title} />
       </div>
-      <div>
+      <div className="w-2/3">
         <h1>{post.title}</h1>
       </div>
     </div>
@@ -26,7 +24,7 @@ const PostDisplay = ({ post }: { post: Post }) => {
 const Dahsboard = ({ posts }: { posts: Post[] }) => {
   return (
     <>
-      <div>
+      <div className="mb-16">
         <h1 className="flex items-center justify-center mt-16 text-3xl font-bold">
           Dashboard
         </h1>
@@ -38,8 +36,8 @@ const Dahsboard = ({ posts }: { posts: Post[] }) => {
       </div>
       <div className="fixed bottom-4 right-1/2 transform translate-x-1/2">
         <Link href={"/add_post"}>
-          <button className="bg-purple-300 px-4 py-2 rounded text-gray-900 text-xl">
-            Test
+          <button className="bg-purple-300 px-4 py-2 rounded text-purple-900 font-semibold text-xl">
+            Add post
           </button>
         </Link>
       </div>
