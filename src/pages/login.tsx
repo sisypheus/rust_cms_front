@@ -52,6 +52,8 @@ export default function SignIn({
           <div className="flex flex-col">
             <label htmlFor="username">Username</label>
             <input
+              className="block p-2 mb-2  w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-md focus:ring-blue-500 
+          focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               name="username"
               type="text"
               value={username}
@@ -61,13 +63,20 @@ export default function SignIn({
           <div className="flex flex-col">
             <label htmlFor="password">Password</label>
             <input
+              className="block p-2 mb-8  w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-md focus:ring-blue-500 
+          focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               name="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit">Sign in</button>
+          <button
+            className="px-4 py-2 bg-purple-300 text-purple-900 font-bold rounded-lg"
+            type="submit"
+          >
+            Sign in
+          </button>
         </form>
       </div>
     </div>

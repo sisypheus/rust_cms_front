@@ -10,12 +10,13 @@ type Post = {
 
 const PostDisplay = ({ post }: { post: Post }) => {
   return (
-    <div className="w-full h-full flex p-4">
+    <div className="w-full h-full flex p-4 bg-gray-50 rounded-lg">
       <div className="w-1/3">
         <img src={post.image} alt={post.title} />
       </div>
-      <div className="w-2/3">
+      <div className="w-2/3 pl-4">
         <h1>{post.title}</h1>
+        <p>{post.description}</p>
       </div>
     </div>
   );
@@ -30,7 +31,9 @@ const Dahsboard = ({ posts }: { posts: Post[] }) => {
         </h1>
         <div className="max-w-3xl mt-8 m-auto">
           {posts.map((post) => (
-            <PostDisplay key={post.title} post={post} />
+            <div key={post.title} className="mt-2">
+              <PostDisplay post={post} />
+            </div>
           ))}
         </div>
       </div>
